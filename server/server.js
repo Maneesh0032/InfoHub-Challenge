@@ -11,12 +11,11 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// ✅ Test route
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
 });
 
-// 🌦️ Weather route
+
 app.get("/api/weather", async (req, res) => {
   try {
     const city = req.query.city || "Hyderabad";
@@ -38,7 +37,7 @@ app.get("/api/weather", async (req, res) => {
   }
 });
 
-// 💱 Currency converter route
+
 app.get("/api/convert", async (req, res) => {
   try {
     const { from = "USD", to = "INR" } = req.query;
@@ -60,7 +59,7 @@ app.get("/api/convert", async (req, res) => {
   }
 });
 
-// 💬 Quote generator route
+
 const quotes = [
   "The secret of getting ahead is getting started.",
   "Believe you can and you're halfway there.",
