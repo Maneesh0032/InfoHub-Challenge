@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# React build folder
+client/build/
+
+# macOS system files
+.DS_Store
