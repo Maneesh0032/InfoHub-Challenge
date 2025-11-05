@@ -7,7 +7,7 @@ function CurrencyConverter() {
   const [rate, setRate] = useState(null);
 
   useEffect(() => {
-    fetch("https://infohub-server.onrender.com/api/convert?from=USD&to=INR")
+    fetch(`/api/convert?from=${from}&to=${to}`)
       .then(res => res.json())
       .then(data => setRate(data.rate))
       .catch(() => setRate(null));

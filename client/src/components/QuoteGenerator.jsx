@@ -24,3 +24,4 @@ function QuoteGenerator() {
 }
 
 export default QuoteGenerator;
+

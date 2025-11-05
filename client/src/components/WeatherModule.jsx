@@ -6,17 +6,17 @@ function WeatherModule() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-  fetch(`https://infohub-server.onrender.com/api/weather?city=${city}`)
-    .then(res => res.json())
-    .then(data => {
-      if (data.error) setError(data.error);
-      else {
-        setWeather(data);
-        setError(null);
-      }
-    })
-    .catch(() => setError("Failed to fetch weather"));
-}, [city]);
+    fetch(`/api/weather?city=${city}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) setError(data.error);
+        else {
+          setWeather(data);
+          setError(null);
+        }
+      })
+      .catch(() => setError("Failed to fetch weather"));
+  }, [city]);
 
   return (
     <div className="card">
